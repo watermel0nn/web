@@ -1,11 +1,14 @@
 'use server';
 
-import { supabase } from '@/lib/supabase';
+import { postWaitlist } from '@/lib/api';
 
 export interface WaitlistFormState {
   status: 'idle' | 'success' | 'error' | 'duplicate';
   message: string;
 }
+
+// Message backend trả về (409) khi email đã tồn tại.
+const DUPLICATE_ERROR = 'Email này đã được đăng ký rồi!';
 
 export async function submitWaitlist(
   _prevState: WaitlistFormState,
@@ -24,23 +27,24 @@ export async function submitWaitlist(
     return { status: 'error', message: 'Email không hợp lệ. Vui lòng kiểm tra lại.' };
   }
 
-  // ── Insert to Supabase ──
-  const { error } = await supabase.from('waitlist').insert([
-    { email, name: name || null, role },
-  ]);
+  // ── Gửi tới backend ──
+  const result = await postWaitlist({
+    email,
+    name: name || undefined,
+    role: role as 'parent' | 'teacher' | 'other',
+  });
 
-  if (error) {
-    // Duplicate email (unique constraint)
-    if (error.code === '23505') {
+  if (!result.success) {
+    // Email đã có trong danh sách (409)
+    if (result.error === DUPLICATE_ERROR) {
       return {
         status: 'duplicate',
         message: 'Email này đã có trong danh sách! Chúng tôi sẽ thông báo sớm nhé 🎉',
       };
     }
-    console.error('Supabase error:', error);
     return {
       status: 'error',
-      message: 'Đã xảy ra lỗi. Vui lòng thử lại sau.',
+      message: result.error ?? 'Đã xảy ra lỗi. Vui lòng thử lại sau.',
     };
   }
 
