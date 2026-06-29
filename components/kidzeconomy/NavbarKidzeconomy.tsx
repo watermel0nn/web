@@ -122,7 +122,7 @@ export default function NavbarKidzeconomy() {
               {/* Logo text */}
               <div className="flex flex-col gap-1">
                 <span
-                  className="font-brand leading-none"
+                  className="font-nunito font-extrabold leading-none"
                   style={{
                     fontSize: '26px',
                     color: '#8C4F2E',

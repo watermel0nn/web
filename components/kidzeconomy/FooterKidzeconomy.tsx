@@ -149,7 +149,7 @@ export default function FooterKidzeconomy() {
               </div>
               <div className="flex flex-col gap-0.5">
                 <span
-                  className="font-brand leading-none"
+                  className="font-nunito font-extrabold leading-none"
                   style={{ fontSize: '24px', color: '#F3A85A' }}
                 >
                   Kidzeconomy
