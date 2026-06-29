@@ -4,7 +4,7 @@ import { useFormState, useFormStatus } from 'react-dom';
 import { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle, AlertCircle, Info, ChevronRight, Loader2 } from 'lucide-react';
-import { submitWaitlist, type WaitlistFormState } from '@/app/kidzeconomy/actions';
+import { submitWaitlist, type WaitlistFormState } from '@/app/(kidzeconomy)/kidzeconomy/actions';
 import { FloatingBlob } from '@/components/ui';
 
 const INITIAL_STATE: WaitlistFormState = { status: 'idle', message: '' };

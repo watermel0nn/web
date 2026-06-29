@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Sparkles, LayoutGrid, Cpu } from 'lucide-react';
 
 const PIPELINE = [
@@ -67,8 +68,13 @@ export default function ProductsPage() {
           <div className="bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col lg:flex-row">
             <div className="lg:w-1/2 p-10 md:p-16 flex flex-col justify-center">
               <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center text-3xl shadow-glow-orange">
-                  🐿️
+                <div className="w-14 h-14 relative bg-orange-50 rounded-2xl flex items-center justify-center shadow-glow-orange overflow-hidden border border-orange-200">
+                  <Image 
+                    src="/images/logo-squirrel.png"
+                    alt="KidzEconomy Logo"
+                    fill
+                    className="object-cover scale-[1.35] origin-top"
+                  />
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-white">KidzEconomy</h2>
@@ -99,7 +105,7 @@ export default function ProductsPage() {
               
               <div>
                 <Link
-                  href="/"
+                  href="/kidzeconomy"
                   className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
                 >
                   Trải nghiệm KidzEconomy

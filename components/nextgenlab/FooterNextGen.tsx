@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Facebook, Twitter, Linkedin, Youtube, MapPin, Mail, Phone } from 'lucide-react';
 
-export default function Footer() {
+export default function FooterNextGen() {
   return (
     <footer className="bg-slate-900 text-slate-300 py-16 border-t border-slate-800 font-inter">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

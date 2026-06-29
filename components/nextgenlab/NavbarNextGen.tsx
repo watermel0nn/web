@@ -9,11 +9,18 @@ import { usePathname } from 'next/navigation';
 const NAV_LINKS = [
   { label: 'Trang chủ', href: '/' },
   { label: 'Về chúng tôi', href: '/about' },
-  { label: 'Hệ sinh thái', href: '/kidzeconomy' },
+  { 
+    label: 'Hệ sinh thái', 
+    href: '/products',
+    dropdown: [
+      { label: 'KidzEconomy', href: '/kidzeconomy' },
+      { label: 'Tất cả sản phẩm', href: '/products' }
+    ]
+  },
   { label: 'Tin tức', href: '/news' },
 ];
 
-export default function Navbar() {
+export default function NavbarNextGen() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -51,6 +58,33 @@ export default function Navbar() {
           <nav className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
+              
+              if (link.dropdown) {
+                return (
+                  <div key={link.href} className="relative group">
+                    <Link
+                      href={link.href}
+                      className={`text-sm font-medium transition-colors py-2 ${
+                        isActive ? 'text-blue-600' : 'text-slate-600 group-hover:text-blue-600'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                    <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-slate-200 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col overflow-hidden">
+                      {link.dropdown.map((sublink) => (
+                        <Link 
+                          key={sublink.href}
+                          href={sublink.href}
+                          className="px-4 py-3 text-sm text-slate-600 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                        >
+                          {sublink.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={link.href}

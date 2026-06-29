@@ -14,10 +14,10 @@ const TRUST_SIGNALS = [
 ];
 
 const FLOATING_EMOJIS = [
-  { emoji: '🏠', x: '7%', y: '18%', delay: 0 },
-  { emoji: '⭐', x: '88%', y: '15%', delay: 0.4 },
-  { emoji: '💪', x: '5%', y: '70%', delay: 0.8 },
-  { emoji: '🎁', x: '90%', y: '68%', delay: 1.2 },
+  { emoji: '🏠', x: '-5%', y: '15%', delay: 0 },
+  { emoji: '⭐', x: '105%', y: '20%', delay: 0.4 },
+  { emoji: '💪', x: '-2%', y: '65%', delay: 0.8 },
+  { emoji: '🎁', x: '98%', y: '80%', delay: 1.2 },
 ];
 
 const STATS = [
@@ -66,38 +66,38 @@ export default function HeroSection() {
       <FloatingBlob color="#FFD55A" size="420px" className="-bottom-24 -left-36" opacity={0.15} blur="95px" />
       <FloatingBlob color="#6B4DE6" size="280px" className="top-1/2 left-1/3" opacity={0.07} blur="80px" />
 
-      {/* ── Floating emoji badges (desktop only) ── */}
-      {FLOATING_EMOJIS.map((el, i) => (
-        <motion.div
-          key={i}
-          className="absolute hidden lg:flex items-center justify-center select-none pointer-events-none"
-          style={{ left: el.x, top: el.y }}
-          initial={{ opacity: 0, scale: 0.5, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: [0, -12, 0] }}
-          transition={{
-            opacity: { delay: el.delay + 0.9, duration: 0.5 },
-            scale: { delay: el.delay + 0.9, duration: 0.4 },
-            y: { delay: el.delay + 1.4, duration: 3.5, repeat: Infinity, ease: 'easeInOut' },
-          }}
-        >
-          <div
-            className="rounded-2xl flex items-center justify-center p-3"
-            style={{
-              width: 60,
-              height: 60,
-              background: 'rgba(255,255,255,0.82)',
-              border: '1.5px solid #DDC08A',
-              boxShadow: '0 8px 28px rgba(74,44,24,0.14)',
-              backdropFilter: 'blur(10px)',
+      <div className="section-container section-padding relative z-10 w-full">
+        {/* ── Floating emoji badges (desktop only) ── */}
+        {FLOATING_EMOJIS.map((el, i) => (
+          <motion.div
+            key={i}
+            className="absolute hidden lg:flex items-center justify-center select-none pointer-events-none z-0"
+            style={{ left: el.x, top: el.y }}
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -12, 0] }}
+            transition={{
+              opacity: { delay: el.delay + 0.9, duration: 0.5 },
+              scale: { delay: el.delay + 0.9, duration: 0.4 },
+              y: { delay: el.delay + 1.4, duration: 3.5, repeat: Infinity, ease: 'easeInOut' },
             }}
           >
-            <span className="text-2xl leading-none">{el.emoji}</span>
-          </div>
-        </motion.div>
-      ))}
+            <div
+              className="rounded-2xl flex items-center justify-center p-3"
+              style={{
+                width: 60,
+                height: 60,
+                background: 'rgba(255,255,255,0.82)',
+                border: '1.5px solid #DDC08A',
+                boxShadow: '0 8px 28px rgba(74,44,24,0.14)',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <span className="text-2xl leading-none">{el.emoji}</span>
+            </div>
+          </motion.div>
+        ))}
 
-      <div className="section-container section-padding relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 relative z-10">
 
           {/* ── Left Column: Text Content ── */}
           <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left gap-6">
@@ -313,7 +313,7 @@ export default function HeroSection() {
               </motion.div>
 
               <motion.div
-                className="absolute -right-6 top-2/3 hidden lg:block"
+                className="absolute -right-8 bottom-16 hidden lg:block"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.5, duration: 0.5 }}

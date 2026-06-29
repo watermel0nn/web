@@ -7,13 +7,13 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const NAV_LINKS = [
-  { label: 'Về chúng tôi', href: '/nextgenlab', id: 'nav-about-nextgenlab' },
+  { label: '← Về NextGen Lab', href: '/', id: 'nav-about-nextgenlab' },
   { label: 'Vấn đề', href: '#pain-points', id: 'nav-pain-points' },
   { label: 'Cách hoạt động', href: '#how-it-works', id: 'nav-how-it-works' },
   { label: 'Sự kiện', href: '#event', id: 'nav-event' },
 ];
 
-export default function Navbar() {
+export default function NavbarKidzeconomy() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const router = useRouter();
@@ -111,10 +111,9 @@ export default function Navbar() {
                 >
                   <Image
                     src="/images/logo-squirrel.png"
-                    alt="Kidzeconomy logo"
-                    width={68}
-                    height={68}
-                    className="object-contain w-full h-full drop-shadow-sm"
+                    alt="KidzEconomy Mascot"
+                    fill
+                    className="object-cover scale-[1.35] origin-top"
                     priority
                   />
                 </div>

@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Navbar from '@/components/shared/Navbar';
-import Footer from '@/components/shared/Footer';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin', 'vietnamese'], variable: '--font-inter' });
@@ -35,11 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className={`min-h-screen bg-slate-50 text-slate-900 ${inter.className} ${inter.variable}`}>
-        <Navbar />
-        <main className="pt-20">
-          {children}
-        </main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

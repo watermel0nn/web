@@ -72,7 +72,7 @@ const TRUST_BADGES = [
   { icon: Heart, label: 'An toàn cho trẻ', id: 'footer-badge-kids' },
 ];
 
-export default function Footer() {
+export default function FooterKidzeconomy() {
   const handleNavClick = (href: string) => {
     if (href.startsWith('#')) {
       const el = document.querySelector(href);
@@ -137,15 +137,13 @@ export default function Footer() {
                   border: '2px solid rgba(243,168,90,0.50)',
                   boxShadow: '0 4px 16px rgba(229,138,44,0.25)',
                   overflow: 'hidden',
-                  padding: 4,
                 }}
               >
                 <Image
                   src="/images/logo-squirrel.png"
                   alt="Kidzeconomy logo"
-                  width={48}
-                  height={48}
-                  className="object-contain w-full h-full"
+                  fill
+                  className="object-cover scale-[1.35] origin-top"
                   style={{ filter: 'brightness(1.05) saturate(1.1)' }}
                 />
               </div>

@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   themeColor: '#FFF7ED',
 };
 
+import NavbarKidzeconomy from '@/components/kidzeconomy/NavbarKidzeconomy';
+import FooterKidzeconomy from '@/components/kidzeconomy/FooterKidzeconomy';
+
 export default function KidzeconomyLayout({
   children,
 }: {
@@ -31,7 +34,9 @@ export default function KidzeconomyLayout({
 }) {
   return (
     <div style={{ background: '#FFF7ED', fontFamily: "'Nunito', ui-sans-serif, system-ui, sans-serif" }} className="min-h-screen">
+      <NavbarKidzeconomy />
       {children}
+      <FooterKidzeconomy />
     </div>
   );
 }
