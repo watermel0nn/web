@@ -46,9 +46,11 @@ export default function NavbarNextGen() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg shadow-blue-500/30 text-white font-bold text-xl group-hover:scale-105 transition-transform">
-              N
-            </div>
+            <img
+              src="/images/nextgenlab-badge.svg"
+              alt="NextGen Lab"
+              className="w-10 h-10 group-hover:scale-105 transition-transform"
+            />
             <span className="font-bold text-xl tracking-tight text-slate-900">
               NextGen<span className="text-blue-600">Lab</span>
             </span>

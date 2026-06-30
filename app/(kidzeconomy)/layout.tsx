@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description: 'Giúp trẻ 5–12 tuổi học quản lý tài chính qua nhiệm vụ và phần thưởng.',
   },
   themeColor: '#FFF7ED',
+  icons: { icon: '/images/logo-squirrel.png' },
 };
 
 import NavbarKidzeconomy from '@/components/kidzeconomy/NavbarKidzeconomy';
