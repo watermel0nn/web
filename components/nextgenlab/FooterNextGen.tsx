@@ -10,7 +10,7 @@ export default function FooterNextGen() {
           {/* Cột 1: Brand & Social */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <img src="/images/nextgenlab-badge.svg" alt="NextGen Lab" className="w-10 h-10" />
+              <img src="/images/nextgenlab-badge.svg" alt="NextGen Lab" className="w-11 h-11" />
               <span className="font-bold text-2xl tracking-tight text-white">
                 NextGen<span className="text-blue-500">Lab</span>
               </span>

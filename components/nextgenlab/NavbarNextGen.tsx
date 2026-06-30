@@ -49,7 +49,7 @@ export default function NavbarNextGen() {
             <img
               src="/images/nextgenlab-badge.svg"
               alt="NextGen Lab"
-              className="w-10 h-10 group-hover:scale-105 transition-transform"
+              className="w-12 h-12 group-hover:scale-105 transition-transform"
             />
             <span className="font-bold text-xl tracking-tight text-slate-900">
               NextGen<span className="text-blue-600">Lab</span>
