@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 const NAV_LINKS = [
-  { label: '← Về NextGen Lab', href: '/', id: 'nav-about-nextgenlab' },
+  { label: '← Về NextGen Lab', href: 'https://nextgenlab.com.vn', id: 'nav-about-nextgenlab' },
   { label: 'Vấn đề', href: '#pain-points', id: 'nav-pain-points' },
   { label: 'Cách hoạt động', href: '#how-it-works', id: 'nav-how-it-works' },
   { label: 'Sự kiện', href: '#event', id: 'nav-event' },
@@ -36,7 +36,13 @@ export default function NavbarKidzeconomy() {
 
   const handleNavClick = (href: string) => {
     setIsMobileOpen(false);
-    
+
+    // Link cross-domain (sang NextGen Lab) → điều hướng đầy đủ, tránh middleware rewrite về Kidz
+    if (href.startsWith('http')) {
+      window.location.href = href;
+      return;
+    }
+
     // Nếu là link chuyển trang (không bắt đầu bằng #) thì dùng router.push
     if (!href.startsWith('#')) {
       router.push(href);
