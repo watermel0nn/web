@@ -71,7 +71,6 @@ export default function ChangelogSection() {
             </>
           }
           description="Chúng tôi luôn lắng nghe phản hồi của ba mẹ và không ngừng hoàn thiện KidzEconomy mỗi ngày."
-          centered
         />
 
         <div className="mt-16 relative">

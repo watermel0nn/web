@@ -70,7 +70,6 @@ export default function BlogSection() {
             </>
           }
           description="Cùng khám phá những bài viết hữu ích giúp ba mẹ đồng hành cùng con xây dựng thói quen tốt mỗi ngày."
-          centered
         />
 
         {/* Categories */}

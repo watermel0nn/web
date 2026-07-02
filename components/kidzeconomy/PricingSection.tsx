@@ -65,7 +65,6 @@ export default function PricingSection() {
             </>
           }
           description="Bắt đầu miễn phí và nâng cấp khi bạn cần nhiều tính năng hơn để đồng hành cùng 2 bé."
-          centered
         />
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
