@@ -7,7 +7,7 @@ import { SectionHeading, FloatingBlob } from '@/components/ui';
 const FEATURES = [
   {
     id: 'feature-tasks',
-    image: '/images/screenshots/tasks.png',
+    image: '/images/screenshots/new1.jpg',
     title: 'Trẻ tự giác làm việc nhà',
     subtitle: 'Hệ thống Nhiệm vụ Gamification',
     description:
@@ -22,7 +22,7 @@ const FEATURES = [
   },
   {
     id: 'feature-savings',
-    image: '/images/screenshots/savings.png',
+    image: '/images/screenshots/new3.jpg',
     title: 'Học cách tiết kiệm và quản lý tài chính',
     subtitle: 'Mục tiêu & Tích lũy Thông minh',
     description:
@@ -37,7 +37,7 @@ const FEATURES = [
   },
   {
     id: 'feature-rewards',
-    image: '/images/screenshots/rewards.png',
+    image: '/images/screenshots/new4.jpg',
     title: 'Động lực hoàn thành từ các món quà yêu thích',
     subtitle: 'Cửa hàng Phần thưởng Đa dạng',
     description:
@@ -49,6 +49,21 @@ const FEATURES = [
     ],
     accent: '#49911B',
     accentBg: '#F0FFF4',
+  },
+  {
+    id: 'feature-progress-tracking',
+    image: '/images/screenshots/realtime_progress.jpg',
+    title: 'Theo dõi tiến độ thời gian thực',
+    subtitle: 'Cập nhật tức thì, kết nối gia đình',
+    description:
+      'Ba mẹ và con có thể theo dõi tiến trình thực hiện nhiệm vụ và tích lũy điểm số ngay lập tức. Hệ thống đồng bộ dữ liệu theo thời gian thực giúp cả nhà luôn nắm bắt được trạng thái công việc và thành quả mà không có độ trễ.',
+    highlights: [
+      { emoji: '⚡', text: 'Đồng bộ dữ liệu tức thời (Real-time)' },
+      { emoji: '📱', text: 'Thông báo đẩy ngay khi con hoàn thành' },
+      { emoji: '📊', text: 'Báo cáo tổng quan dễ hiểu' },
+    ],
+    accent: '#0EA5E9',
+    accentBg: '#E0F2FE',
   },
 ];
 

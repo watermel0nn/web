@@ -76,7 +76,7 @@ export default function AboutPage() {
                 <Target className="w-12 h-12 text-blue-200 mb-8" />
                 <h2 className="text-3xl font-bold mb-6">Sứ mệnh</h2>
                 <p className="text-lg text-blue-50 leading-relaxed">
-                  Ứng dụng công nghệ để giải quyết các bài toán thực tiễn của xã hội, bắt đầu từ nền tảng gia đình. Chúng tôi phát triển những sản phẩm công nghệ không chỉ tiện ích mà còn mang tính giáo dục sâu sắc, giúp cuộc sống hiện đại trở nên cân bằng và gắn kết hơn.
+                  Ứng dụng công nghệ để giải quyết những bài toán thực tiễn trong cuộc sống, lấy con người làm trung tâm và tạo ra các giải pháp số mang lại giá trị bền vững cho cá nhân, gia đình và doanh nghiệp. Chúng tôi không chỉ phát triển sản phẩm công nghệ mà còn xây dựng một hệ sinh thái đổi mới sáng tạo, giúp kết nối con người với công nghệ theo cách đơn giản, hiệu quả và gần gũi hơn.
                 </p>
               </div>
             </motion.div>
@@ -92,7 +92,7 @@ export default function AboutPage() {
               <Lightbulb className="w-12 h-12 text-emerald-600 mb-8 relative z-10" />
               <h2 className="text-3xl font-bold text-blue-900 mb-6 relative z-10">Tầm nhìn</h2>
               <p className="text-lg text-slate-700 leading-relaxed relative z-10">
-                Trở thành đơn vị cung cấp giải pháp công nghệ tiên phong hàng đầu tại khu vực, là cái tên được các gia đình và tổ chức giáo dục tin tưởng nhất khi nhắc đến các giải pháp công nghệ kết nối thế hệ và phát triển toàn diện.
+                Trở thành hệ sinh thái công nghệ lấy con người làm trung tâm hàng đầu Việt Nam, tiên phong phát triển các giải pháp số sáng tạo nhằm nâng cao chất lượng cuộc sống và tạo ra những giá trị tích cực cho cộng đồng trong kỷ nguyên số.
               </p>
             </motion.div>
           </div>

@@ -7,7 +7,6 @@ import {
   MapPin,
   Facebook,
   Instagram,
-  Youtube,
   ChevronRight,
   Shield,
   Heart,
@@ -18,7 +17,7 @@ const FOOTER_LINKS = {
   product: {
     title: 'Sản phẩm',
     links: [
-      { label: 'Tính năng', href: '#features', id: 'footer-features' },
+      { label: 'Tính năng', href: '#feature-showcase', id: 'footer-features' },
       { label: 'Cách hoạt động', href: '#how-it-works', id: 'footer-how-it-works' },
       { label: 'Giá cả', href: '#pricing', id: 'footer-pricing' },
       { label: 'Changelog', href: '#changelog', id: 'footer-changelog' },
@@ -27,18 +26,17 @@ const FOOTER_LINKS = {
   company: {
     title: 'Công ty',
     links: [
-      { label: 'Về chúng tôi', href: '#about', id: 'footer-about' },
-      { label: 'Blog', href: '#blog', id: 'footer-blog' },
-      { label: 'Tuyển dụng', href: '#careers', id: 'footer-careers' },
+      { label: 'Về chúng tôi', href: '/', id: 'footer-about' },
+      { label: 'Blog', href: '/blog', id: 'footer-blog' },
       { label: 'Liên hệ', href: '#contact', id: 'footer-contact' },
     ],
   },
   legal: {
     title: 'Pháp lý',
     links: [
-      { label: 'Chính sách bảo mật', href: '#privacy', id: 'footer-privacy' },
-      { label: 'Điều khoản sử dụng', href: '#terms', id: 'footer-terms' },
-      { label: 'Chính sách cookie', href: '#cookies', id: 'footer-cookies' },
+      { label: 'Chính sách bảo mật', href: '/privacy', id: 'footer-privacy' },
+      { label: 'Điều khoản sử dụng', href: '/terms', id: 'footer-terms' },
+      { label: 'Chính sách cookie', href: '/cookies', id: 'footer-cookies' },
     ],
   },
 };
@@ -53,17 +51,10 @@ const SOCIAL_LINKS = [
   },
   {
     icon: Instagram,
-    href: '#',
+    href: 'https://www.instagram.com/kidz.economy?igsh=MW9kMDZyZnJ3Y3IyeA%3D%3D&utm_source=qr',
     label: 'Instagram',
     id: 'footer-instagram',
     color: '#E1306C',
-  },
-  {
-    icon: Youtube,
-    href: '#',
-    label: 'YouTube',
-    id: 'footer-youtube',
-    color: '#FF0000',
   },
 ];
 
@@ -175,7 +166,7 @@ export default function FooterKidzeconomy() {
             <div className="flex flex-col gap-2">
               {[
                 { icon: Mail, text: 'hello@kidzeconomy.vn', id: 'footer-email' },
-                { icon: Phone, text: '1800 1234', id: 'footer-phone' },
+                { icon: Phone, text: '1900 xxxx', id: 'footer-phone' },
                 { icon: MapPin, text: 'TP. Hồ Chí Minh, Việt Nam', id: 'footer-location' },
               ].map(({ icon: Icon, text, id }) => (
                 <div key={id} id={id} className="flex items-center gap-2.5">

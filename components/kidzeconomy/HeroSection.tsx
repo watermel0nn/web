@@ -290,7 +290,7 @@ export default function HeroSection() {
 
               {/* Floating notification badges */}
               <motion.div
-                className="absolute -left-8 top-1/4 hidden lg:block"
+                className="absolute -left-24 xl:-left-32 top-1/4 hidden lg:block"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
@@ -313,7 +313,7 @@ export default function HeroSection() {
               </motion.div>
 
               <motion.div
-                className="absolute -right-8 bottom-16 hidden lg:block"
+                className="absolute -right-24 xl:-right-32 bottom-16 hidden lg:block"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1.5, duration: 0.5 }}

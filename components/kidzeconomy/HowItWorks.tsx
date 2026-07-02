@@ -3,41 +3,69 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { SectionHeading, FloatingBlob } from '@/components/ui';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 // ─── Data ────────────────────────────────────────────────────
 const STEPS = [
   {
     number: '01',
     emoji: '📋',
-    title: 'Giao việc & Định giá',
-    description:
-      'Phụ huynh thiết lập các công việc nhà trên App và gán số điểm tương ứng. Ví dụ: Rửa bát = 30 điểm, Quét nhà = 20 điểm.',
+    title: 'Ba mẹ tạo nhiệm vụ và thiết lập điểm thưởng',
+    description: 'Tạo danh sách việc nhà phù hợp với độ tuổi và mục tiêu của gia đình. Mỗi nhiệm vụ đều có số điểm tương ứng.',
     color: '#6B4DE6',
     bg: '#EDE5FF',
-    details: ['Tùy chỉnh công việc linh hoạt', 'Gán điểm theo độ khó', 'Lặp lại hàng ngày/tuần'],
-    thumbnail: '/images/screenshots/parent-tasks.png',
+    details: ['Tùy chỉnh công việc linh hoạt', 'Gán điểm theo độ khó'],
+    thumbnail: '/images/screenshots/step_bg_1.jpg',
   },
   {
     number: '02',
-    emoji: '⭐',
-    title: 'Con thực hiện & Tích lũy',
-    description:
-      'Trẻ hào hứng làm việc để kiếm "thu nhập" ảo và theo dõi số điểm của mình tăng lên mỗi ngày. Hệ thống streak giúp con duy trì thói quen.',
+    emoji: '🧹',
+    title: 'Con thực hiện nhiệm vụ',
+    description: 'Con chủ động hoàn thành công việc đã được giao.',
     color: '#E58A2C',
     bg: '#FFF0D9',
-    details: ['Theo dõi điểm real-time', 'Streak liên tục 7-21 ngày', 'Thông báo nhắc nhở thông minh'],
-    thumbnail: '/images/screenshots/tasks.png',
+    details: ['Trẻ tự giác hành động', 'Giảm thời gian nhắc nhở'],
+    thumbnail: '/images/screenshots/step_bg_2.jpg',
   },
   {
     number: '03',
+    emoji: '📷',
+    title: 'Con gửi xác nhận hoàn thành',
+    description: 'Con gửi hình ảnh xác nhận đã hoàn thành nhiệm vụ qua ứng dụng.',
+    color: '#D946EF',
+    bg: '#FAE8FF',
+    details: ['Chụp ảnh kết quả', 'Gửi thông báo nhanh'],
+    thumbnail: '/images/screenshots/step_bg_3.jpg',
+  },
+  {
+    number: '04',
+    emoji: '✅',
+    title: 'Ba mẹ kiểm tra và xác nhận',
+    description: 'Ba mẹ xem kết quả và xác nhận nhiệm vụ đã hoàn thành.',
+    color: '#0EA5E9',
+    bg: '#E0F2FE',
+    details: ['Duyệt kết quả 1 chạm', 'Theo dõi hình ảnh'],
+    thumbnail: '/images/screenshots/step_bg_4.jpg',
+  },
+  {
+    number: '05',
+    emoji: '⭐',
+    title: 'Điểm được cộng vào tài khoản của con',
+    description: 'Mỗi nhiệm vụ được xác nhận thành công sẽ cộng điểm vào tài khoản. Con có thể theo dõi số điểm của mình mọi lúc.',
+    color: '#F59E0B',
+    bg: '#FEF3C7',
+    details: ['Theo dõi điểm real-time', 'Hệ thống streak'],
+    thumbnail: '/images/screenshots/step_bg_5.jpg',
+  },
+  {
+    number: '06',
     emoji: '🎁',
-    title: 'Đàm phán & Đổi quà',
-    description:
-      'Trẻ dùng điểm để "mua" các phần thưởng từ phụ huynh: đồ chơi, đi chơi, món ăn yêu thích... Qua đó hiểu rằng muốn có thứ mình thích phải nỗ lực!',
+    title: 'Con đổi thưởng – Ba mẹ phê duyệt',
+    description: 'Con chọn phần thưởng mình yêu thích và gửi yêu cầu. Ba mẹ có toàn quyền phê duyệt hoặc từ chối.',
     color: '#49911B',
     bg: '#F0FFF4',
-    details: ['Cửa hàng phần thưởng cá nhân', 'Học đàm phán & lựa chọn', 'Hiểu giá trị sức lao động'],
-    thumbnail: '/images/screenshots/rewards.png',
+    details: ['Cửa hàng phần thưởng', 'Học đàm phán'],
+    thumbnail: '/images/screenshots/step_bg_5.jpg',
   },
 ] as const;
 
@@ -80,6 +108,7 @@ const pulseRing = {
 export default function HowItWorks() {
   return (
     <section
+      id="how-it-works"
       className="relative py-20 md:py-28 overflow-hidden"
       style={{
         background: 'linear-gradient(180deg, #FFF7ED 0%, #FFF0D9 100%)',
@@ -96,7 +125,7 @@ export default function HowItWorks() {
         <SectionHeading
           badge="🗺️ Cách hoạt động"
           badgeColor="orange"
-          title="Chỉ 3 bước đơn giản để"
+          title="Chỉ 6 bước đơn giản để"
           highlight="con tự lập hơn mỗi ngày"
           description="Quy trình đã được chứng minh hiệu quả bởi hàng nghìn gia đình."
           align="center"
@@ -124,9 +153,9 @@ export default function HowItWorks() {
             }}
           />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {STEPS.map((step, i) => (
-              <motion.div key={step.number} variants={cardVariants} className="flex flex-col items-center">
+              <motion.div key={step.number} variants={cardVariants} className="flex flex-col items-center h-full w-full">
                 {/* ── Emoji circle with pulse ring ── */}
                 <div className="relative mb-6 flex items-center justify-center" style={{ width: 112, height: 112 }}>
                   {/* Pulse ring */}
@@ -139,20 +168,12 @@ export default function HowItWorks() {
                   {/* Outer ring */}
                   <div
                     className="absolute inset-0 rounded-full"
-                    style={{
-                      border: `2.5px solid ${step.color}`,
-                      opacity: 0.25,
-                    }}
+                    style={{ border: `2.5px solid ${step.color}`, opacity: 0.25 }}
                   />
                   {/* Inner circle */}
                   <div
                     className="relative z-10 flex items-center justify-center rounded-full"
-                    style={{
-                      width: 88,
-                      height: 88,
-                      background: step.bg,
-                      boxShadow: `0 8px 32px ${step.color}20`,
-                    }}
+                    style={{ width: 88, height: 88, background: step.bg, boxShadow: `0 8px 32px ${step.color}20` }}
                   >
                     <span className="text-4xl">{step.emoji}</span>
                   </div>
@@ -172,47 +193,22 @@ export default function HowItWorks() {
                 </span>
 
                 {/* ── Card ── */}
-                <motion.div
-                  className="group rounded-3xl p-6 flex-1 w-full relative overflow-hidden flex flex-col"
-                  style={{
-                    background: '#FFFFFF',
-                    border: `1.5px solid ${step.color}25`,
-                    boxShadow: `0 4px 24px ${step.color}10`,
+                <Card 
+                  className="flex-1 w-full flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 border-none"
+                  style={{ 
+                    background: '#FFF7ED', 
+                    boxShadow: `0 4px 24px ${step.color}15`,
                   }}
-                  whileHover={{
-                    y: -6,
-                    boxShadow: `0 16px 48px ${step.color}20`,
-                    borderColor: `${step.color}50`,
-                  }}
-                  transition={{ duration: 0.25, ease: 'easeOut' }}
                 >
-                  {/* Thumbnail background/floating at bottom right */}
-                  <motion.div 
-                    className="absolute -right-6 -bottom-16 w-36 drop-shadow-2xl z-0 transition-transform duration-300 group-hover:-translate-y-4 group-hover:-rotate-3"
-                    initial={{ rotate: 10, opacity: 0.6 }}
-                  >
-                    <div className="rounded-[1.2rem] overflow-hidden border-[3px] border-[#1a1a1a] bg-[#1a1a1a] shadow-lg">
-                      <Image
-                        src={step.thumbnail}
-                        alt={`App minh họa bước ${step.number}`}
-                        width={140}
-                        height={300}
-                        className="w-full h-auto object-cover rounded-[0.9rem]"
-                        quality={85}
-                      />
-                    </div>
-                  </motion.div>
-
-                  <div className="relative z-10 flex-1 flex flex-col bg-white/80 backdrop-blur-[2px] -mx-6 px-6 pt-2 pb-6 -mt-2 rounded-3xl h-full">
-                    {/* Title */}
-                    <h3
-                      className="text-xl font-extrabold mb-3 text-center"
+                  <CardHeader className="pb-4">
+                    <CardTitle
+                      className="text-xl font-extrabold text-center"
                       style={{ color: '#3A2A1A', fontFamily: "'Nunito', sans-serif" }}
                     >
                       {step.title}
-                    </h3>
-
-                    {/* Description */}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-1 flex flex-col p-0 px-6">
                     <p
                       className="text-sm leading-relaxed mb-5 text-center flex-1"
                       style={{ color: '#9C7A5B', fontFamily: "'Nunito', sans-serif" }}
@@ -227,7 +223,7 @@ export default function HowItWorks() {
                     />
 
                     {/* Details list */}
-                    <ul className="space-y-2.5 bg-white/90 p-4 rounded-2xl border" style={{ borderColor: `${step.color}15` }}>
+                    <ul className="space-y-2.5 bg-black/5 p-4 rounded-2xl border mb-6" style={{ borderColor: `${step.color}15` }}>
                       {step.details.map((detail) => (
                         <li key={detail} className="flex items-start gap-2.5">
                           <span
@@ -248,8 +244,9 @@ export default function HowItWorks() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </motion.div>
+
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>

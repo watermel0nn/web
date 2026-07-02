@@ -117,7 +117,7 @@ export default function ParentTrust() {
                   {/* Screen */}
                   <div className="relative overflow-hidden" style={{ borderRadius: '2rem' }}>
                     <Image
-                      src="/images/screenshots/quan_li.png"
+                      src="/images/screenshots/new2.jpg"
                       alt="Dashboard quản lý phụ huynh - KidzEconomy"
                       width={220}
                       height={476}

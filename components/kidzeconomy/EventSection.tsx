@@ -238,13 +238,13 @@ export default function EventSection() {
                   whileInView="visible"
                   viewport={{ once: true }}
                   whileHover={{ x: 4 }}
-                  className="flex items-start gap-3 rounded-2xl px-4 py-3"
+                  className="flex items-center gap-3 rounded-2xl px-4 py-3"
                   style={{
                     background: '#FFFFFF',
                     border: '1.5px solid #F0E0C0',
                   }}
                 >
-                  <span className="text-xl flex-shrink-0 mt-0.5">{emoji}</span>
+                  <span className="text-xl flex-shrink-0">{emoji}</span>
                   <span className="text-sm font-semibold" style={{ color: '#3A2A1A' }}>
                     {text}
                   </span>

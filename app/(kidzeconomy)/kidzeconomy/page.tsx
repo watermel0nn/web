@@ -5,6 +5,8 @@ import HowItWorks from '@/components/kidzeconomy/HowItWorks';
 import ParentTrust from '@/components/kidzeconomy/ParentTrust';
 import EventSection from '@/components/kidzeconomy/EventSection';
 import WaitlistCTA from '@/components/kidzeconomy/WaitlistCTA';
+import PricingSection from '@/components/kidzeconomy/PricingSection';
+import ChangelogSection from '@/components/kidzeconomy/ChangelogSection';
 
 export default function HomePage() {
   return (
@@ -26,7 +28,13 @@ export default function HomePage() {
       {/* 5. TRUST: Sự an tâm của phụ huynh */}
       <ParentTrust />
 
-      {/* 6. CONVERSION: Event CTA — urgency & scarcity */}
+      {/* 6. PRICING: Bảng giá */}
+      <PricingSection />
+
+      {/* 7. CHANGELOG: Lịch sử cập nhật */}
+      <ChangelogSection />
+
+      {/* 8. CONVERSION: Event CTA — urgency & scarcity */}
       <EventSection />
 
       {/* 5. CAPTURE: Form đăng ký Waitlist + Workshop */}
